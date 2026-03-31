@@ -56,22 +56,23 @@ A full-stack service marketplace platform where users can explore services, book
 ## Installation & Setup
 
 ### 1. Clone the repository
-git clone https://github.com/Chitrangda12/service-marketplace.git
+    ```bash
+    git clone <repository-url>
 
 ### 2. Install backend dependencies
-cd backend
-
-npm install
+    ```bash
+    cd backend
+    npm install
 
 ### 3. Create `.env` file
-PORT=5000
-
-MONGO_URI=your_mongodb_connection
-
-JWT_SECRET=your_secret_key
+    ```bash
+    PORT=5000
+    MONGO_URI=your_mongodb_connection
+    JWT_SECRET=your_secret_key
 
 ### 4. Run backend server
-npm run dev
+    ```bash
+    npm run dev
 
 
 ##  API Endpoints (Sample)
