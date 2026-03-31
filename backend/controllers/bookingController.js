@@ -1,6 +1,5 @@
 const Booking = require("../models/Booking");
 
-// CREATE BOOKING 
 const Service = require("../models/Service");
 
 const createBooking = async (req, res) => {
@@ -26,7 +25,6 @@ const createBooking = async (req, res) => {
   }
 };
 
-// GET MY BOOKINGS
 const getMyBookings = async (req, res) => {
   try {
     const bookings = await Booking.find({ user: req.user.id })
@@ -47,7 +45,6 @@ const getProviderBookings = async (req, res) => {
       })
       .populate("user", "name email");
 
-    // remove null services 
     const filtered = bookings.filter(b => b.service !== null);
 
     res.json(filtered);
@@ -67,7 +64,6 @@ const updateBookingStatus = async (req, res) => {
       return res.status(404).json({ message: "Booking not found" });
     }
 
-    // only provider of that service can update
     if (booking.service.provider.toString() !== req.user.id) {
       return res.status(403).json({
         message: "Not authorized to update this booking",
