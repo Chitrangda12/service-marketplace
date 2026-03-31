@@ -10,14 +10,12 @@ dotenv.config();
 
 const app = express();
 
-// middleware
 app.use(express.json());
 app.use(cors());
 
 const authRoutes = require("./routes/authRoutes");
 const { protect, authorizeRoles } = require("./middleware/authMiddleware");
 
-// use routes
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/services", serviceRoutes);
@@ -49,7 +47,7 @@ const connectDB = require("./config/db");
 // connect database
 const startServer = async () => {
   try {
-    await connectDB(); // wait for DB connection
+    await connectDB(); 
 
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
