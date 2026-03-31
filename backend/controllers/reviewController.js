@@ -1,7 +1,6 @@
 const Review = require("../models/Review");
 const Booking = require("../models/Booking");
 
-// CREATE REVIEW
 const createReview = async (req, res) => {
   try {
     const { serviceId, rating, comment } = req.body;
@@ -33,7 +32,6 @@ const createReview = async (req, res) => {
   }
 };
 
-// GET REVIEWS FOR A SERVICE
 const getServiceReviews = async (req, res) => {
   try {
     const reviews = await Review.find({ service: req.params.serviceId })
