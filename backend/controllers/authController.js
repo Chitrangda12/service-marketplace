@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 
-// Signup Controller
 const signupUser = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
@@ -17,7 +16,6 @@ const signupUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // create new user
     const user = await User.create({
       name,
       email,
@@ -55,7 +53,6 @@ const loginUser = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    // create token
     const token = jwt.sign(
       { id: user._id, role:user.role },
       process.env.JWT_SECRET,
