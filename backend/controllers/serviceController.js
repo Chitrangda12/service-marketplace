@@ -1,6 +1,5 @@
 const Service = require("../models/Service");
 
-// CREATE SERVICE
 const createService = async (req, res) => {
   try {
     const { title, description, price } = req.body;
@@ -18,7 +17,6 @@ const createService = async (req, res) => {
   }
 };
 
-// GET ALL SERVICES
 const getServices = async (req, res) => {
   try {
     const services = await Service.find().populate("provider", "name email");
