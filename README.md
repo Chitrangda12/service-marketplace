@@ -20,25 +20,13 @@ A full-stack service marketplace platform where users can explore services, book
 
 ## Features
 
-###  Authentication & Authorization
-- User registration and login
 - JWT-based authentication
-- Role-based access (User / Provider)
-
-### Services
-- Providers can create and manage services
-- Users can browse available services
-
-### Booking System
-- Users can book services
-- Booking lifecycle:
-  - Pending
-  - Completed
-
-### Reviews & Ratings
-- Users can review services after completion
-- Rating system (1–5 stars)
-- Prevents invalid reviews
+- Role-based authorization for users and providers
+- Provider service creation and service listing
+- Booking system with status management
+- Review and rating system after completed bookings
+- Trust Score calculation based on rating, completed bookings, and service activity
+- Secure environment configuration using `.env`
 
 ---
 
