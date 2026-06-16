@@ -1,3 +1,4 @@
+const trustRoutes = require("./routes/trustRoutes");
 const userRoutes = require("./routes/userRoutes");
 const serviceRoutes = require("./routes/serviceRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
@@ -21,6 +22,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/services", serviceRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/trust", trustRoutes);
 
 app.get("/api/protected", protect, (req, res) => {
   res.json({
